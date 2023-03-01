@@ -112,6 +112,7 @@ Board.prototype.isOccupied = function (pos) {
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
   let x, y;
   [x,y] = pos;
+  let availableflips = []
 
   if (!this.isValidPos(pos)) {
     return [];
@@ -126,7 +127,11 @@ Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
   }
 
   dir.forEach(step => {
-    
+    let currentPos = [x+step[0], y+step[1]]
+    if (this.isValidPos(pos)) {
+      this._positionsToFlip
+      return [];
+    }
   });
 };
 
