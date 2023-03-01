@@ -1,2 +1,21 @@
 /* PHASE 2: Thumbs */
 
+.thumbs {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* .thumbs img {
+    width: 30%;
+} */
+
+.thumb {
+    width: 29%;
+    margin: 5px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
