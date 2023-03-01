@@ -3,6 +3,7 @@
     display: block;
     margin-top: -125px;
     position: relative;
+    overflow: hidden;
 }
 
 .profile-info p{
@@ -19,6 +20,10 @@
     border-bottom: 2px solid lightgray;
 }
 
+.profile-nav li:hover {
+    background-color: rgb(231, 230, 230);
+}
+
 h2 {
     padding: 20px 0;
     font-weight: bold;
@@ -28,4 +33,22 @@ h2 {
 .profile-picture img {
     border: 1px solid black;
     border-radius: 5px;
+}
+
+#online {
+    position: absolute;
+    color: white;
+    /* border: 1px gray solid; */
+    box-shadow: 0 1px green;
+    background-color: rgb(78, 188, 78);
+    top: 25px;
+    left: -60px;
+    /* transform: translateX(10px);
+    transform: translateY(20px); */
+    transform: rotate(-45deg);
+    width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
