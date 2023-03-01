@@ -71,12 +71,29 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
+  let x, y;
+  [x,y] = pos;
+  if (this.getPiece(pos) === undefined) {
+    return false;
+  } else if (this.getPiece(pos).color === color) {
+    return true;
+  } else {
+    return false;
+  }
+
 };
 
 /**
  * Checks if a given position has a piece on it.
  */
 Board.prototype.isOccupied = function (pos) {
+  let x, y;
+  [x,y] = pos;
+  if (this.getPiece(pos) === undefined) {
+    return false;
+  } else {
+    return true;
+  }
 };
 
 /**
@@ -93,6 +110,24 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
+  let x, y;
+  [x,y] = pos;
+
+  if (!this.isValidPos(pos)) {
+    return [];
+  }
+
+  if (this.grid[x][y] === undefined) {
+    return [];
+  }
+
+  if (this.grid[x][y].oppColor()) {
+
+  }
+
+  dir.forEach(step => {
+    
+  });
 };
 
 /**
