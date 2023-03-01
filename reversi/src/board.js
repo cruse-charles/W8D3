@@ -110,29 +110,46 @@ Board.prototype.isOccupied = function (pos) {
  * Returns empty array if no pieces of the opposite color are found.
  */
 Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
-  let x, y;
-  [x,y] = pos;
-  let availableflips = []
-
   if (!this.isValidPos(pos)) {
     return [];
   }
+  let x, y;
+  [x,y] = pos;
+  [dx, dy] = dir;
+  let nextPos = [x + dx, y + dy];
+   if (!piecesToFlip) {
+    piecesToFlip = [];
+   }
 
-  if (this.grid[x][y] === undefined) {
+  if (!this.isValidPos(nextPos)) {
+    debugger;
     return [];
+  } else if (!this.isOccupied(nextPos)) {
+    piecesToFlip = [];
+    return piecesToFlip;
+  } else if (!this.isMine(nextPos, color)) {
+    piecesToFlip.push(nextPos);
+    return this._positionsToFlip(nextPos, color, dir, piecesToFlip)
+  } else if (this.isMine(nextPos, color)) {
+    return piecesToFlip;
   }
+    // piecesToFlip.push(nextPos)
+    //  return piecesToFlip.concat() this._positionsToFlip(nextPos, color, dir, piecesToFlip)
+  // }
 
-  if (this.grid[x][y].oppColor()) {
+  // return piecesToFlip;
 
-  }
+  // if (this.grid[x][y] === undefined) {
+  //   return [];
+  // }
 
-  dir.forEach(step => {
-    let currentPos = [x+step[0], y+step[1]]
-    if (this.isValidPos(pos)) {
-      this._positionsToFlip
-      return [];
-    }
-  });
+  // dir.forEach(step => {
+  //   let currentPos = [x+step[0], y+step[1]]
+  //   if (this.isValidPos(pos)) {
+  //     this._positionsToFlip
+  //     return [];
+  //   }
+  // });
 };
 
 /**

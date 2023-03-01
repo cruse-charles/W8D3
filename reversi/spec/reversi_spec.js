@@ -134,6 +134,7 @@ describe("Board", function () {
 
   describe("#_positionsToFlip", function () {
     it('returns empty array when pos is not on the board', function () {
+      // debugger;
       expect(testBoard._positionsToFlip([-1, -1], "white", [1, 0]).length).toEqual(0);
       expect(testBoard._positionsToFlip([9, 9], "white", [1, 0]).length).toEqual(0);
     })
@@ -222,6 +223,7 @@ describe("Board", function () {
 
     it("returns positions for longer horizontal and vertical cases ", function () {
       //long vertical cases
+      // debugger;
       expect(JSON.stringify(testBoardLongHorzDiagonal._positionsToFlip([1, 0], "white", [1, 0]))).toEqual(JSON.stringify([[2, 0], [3, 0], [4, 0]]));
       expect(JSON.stringify(testBoardLongHorzDiagonal._positionsToFlip([5, 7], "white", [-1, 0]))).toEqual(JSON.stringify([[4, 7], [3, 7], [2, 7]]));
 

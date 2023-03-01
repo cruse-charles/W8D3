@@ -10,7 +10,7 @@ function Piece (color) {
  * Returns the color opposite the current piece.
  */
 Piece.prototype.oppColor = function () {
-    // this.color === 'black' ? 'white' : 'black';
+    this.color === 'black' ? 'white' : 'black';
     // not sure about this color thing
 };
 
